@@ -6,7 +6,7 @@ import { Application, Assets, Container, Sprite } from 'pixi.js';
     const app = new Application();
 
     // Initialize the application
-    await app.init({ background: '#1099bb', resizeTo: window });
+    await app.init({ hello: true, background: '#1099bb', resizeTo: window });
 
     // Append the application canvas to the document body
     document.body.appendChild(app.canvas);
@@ -17,8 +17,13 @@ import { Application, Assets, Container, Sprite } from 'pixi.js';
     app.stage.addChild(container);
 
     // Load the bunny texture
-    const texture = await Assets.load('https://pixijs.com/assets/bunny.png');
-
+    Assets.addBundle('bundle', [{
+        alias: 'bunny',
+        src: 'http://localhost:8080/examples/assets/bunny.png'
+    }])
+    const resources = await Assets.loadBundle('bundle');
+    console.log('1234')
+    const texture = resources.bunny
     // Create a 5x5 grid of bunnies in the container
     for (let i = 0; i < 25; i++)
     {

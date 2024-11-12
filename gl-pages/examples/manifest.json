@@ -2,6 +2,7 @@
     {
         "id": "demos-basic",
         "title": "Basic",
+        "validVersions": [8],
         "items": [{
             "title": "Container",
             "entry": "container.js"

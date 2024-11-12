@@ -194,7 +194,7 @@ jQuery(document).ready(($) => {
                 bpc.exampleRequiredPlugins = plugins === '' ? [] : plugins.split(',');
 
                 const validVersions = $(this).attr('data-validVersions');
-                bpc.exampleValidVersions = validVersions === '' ? [7] : validVersions.split(',').map((v) => parseInt(v, 10));
+                bpc.exampleValidVersions = validVersions === '' ? [8] : validVersions.split(',').map((v) => parseInt(v, 10));
 
                 const features = $(this).attr('data-features');
                 bpc.exampleFeatures = features === '' ? [] : features.split(',');
@@ -349,7 +349,7 @@ jQuery(document).ready(($) => {
         bpc.updateMenu = function updateMenu() {
             $('.main-nav .main-menu ul li').each(function updateEachMenuItem() {
                 const validVersions = $(this).attr('data-validVersions');
-                const exampleValidVersions = validVersions === '' ? [6, 5] : validVersions.split(',').map((v) => parseInt(v, 10));
+                const exampleValidVersions = validVersions === '' ? [8] : validVersions.split(',').map((v) => parseInt(v, 10));
                 if (exampleValidVersions.indexOf(bpc.majorPixiVersion) === -1) {
                     $(this).addClass('invalid');
                 } else {
