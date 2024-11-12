@@ -2,10 +2,17 @@
     {
         "id": "demos-basic",
         "title": "Basic",
-        "validVersions": [8],
         "items": [{
             "title": "Container",
             "entry": "container.js"
+        }]
+    },
+    {
+        "id": "mesh-and-shaders",
+        "title": "Mesh And Shaders",
+        "items": [{
+            "title": "Circle",
+            "entry": "circle.js"
         }]
     }
 ]

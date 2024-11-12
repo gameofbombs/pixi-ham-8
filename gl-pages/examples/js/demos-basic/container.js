@@ -6,7 +6,6 @@ import { Application, Assets, Container, Sprite } from 'pixi.js';
     const app = new Application();
 
     Assets.loader.parsers[0].config.preferWorkers = false
-    Assets.crossOrigin = 'anonymous'
 
     // Initialize the application
     await app.init({ hello: true, background: '#1099bb', resizeTo: window });
