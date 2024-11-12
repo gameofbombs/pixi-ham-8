@@ -5,8 +5,13 @@ import { Application, Assets, Container, Sprite } from 'pixi.js';
     // Create a new application
     const app = new Application();
 
+    Assets.loader.parsers[0].config.preferWorkers = false
+    Assets.crossOrigin = 'anonymous'
+
     // Initialize the application
     await app.init({ hello: true, background: '#1099bb', resizeTo: window });
+
+    console.log(Assets)
 
     // Append the application canvas to the document body
     document.body.appendChild(app.canvas);
@@ -19,7 +24,7 @@ import { Application, Assets, Container, Sprite } from 'pixi.js';
     // Load the bunny texture
     Assets.addBundle('bundle', [{
         alias: 'bunny',
-        src: 'http://localhost:8080/examples/assets/bunny.png'
+        src: 'examples/assets/bunny.png'
     }])
     const resources = await Assets.loadBundle('bundle');
     console.log('1234')
